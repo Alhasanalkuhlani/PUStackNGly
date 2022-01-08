@@ -144,7 +144,7 @@ for i in range(50):
     for name, model in models.items():
         if i==0:
             sc=scoring_all_valid
-        model.fit(X1, y1)
+        model.fit(X, y)
         y_pred=model.predict(X_test2)
         mes=perf_measure(Y_test2,y_pred)
         mcc= matthews_corrcoef(y_true= Y_test2, y_pred= y_pred)
@@ -173,7 +173,7 @@ for i in range(50):
     print(scoring_all_valid)
     sc=sc+scoring_all_valid
 #     sc.add(sc1)
-print(sc/50)    
+print(sc/51)    
 
 #Testing 
 
