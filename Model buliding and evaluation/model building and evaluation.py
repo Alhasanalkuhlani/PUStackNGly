@@ -51,9 +51,9 @@ def get_stacking():
 	level0.append(('knn', KNeighborsClassifier()))
 # 	level0.append(('XGB', XGBClassifier(eval_metric='mlogloss')))
 	# define meta learner model
-	level1 = LogisticRegression()
+#	level1 = LogisticRegression()
 # 	level1 = XGBClassifier()
-# 	level1 =  SVC()
+ 	level1 =  SVC()
 	# define the stacking ensemble
 	model = StackingClassifier(estimators=level0, final_estimator=level1, cv=5,stack_method='predict_proba')
 	return model
